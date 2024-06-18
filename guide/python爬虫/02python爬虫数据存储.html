@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>python爬虫数据存储 | 小宇博客</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/vuepress/assets/img/favicon.ico">
+    <meta name="description" content="我的个人博客">
+    
+    <link rel="preload" href="/vuepress/assets/css/0.styles.168d590a.css" as="style"><link rel="preload" href="/vuepress/assets/js/app.63c31dc8.js" as="script"><link rel="preload" href="/vuepress/assets/js/7.b0879730.js" as="script"><link rel="preload" href="/vuepress/assets/js/1.e3575c5c.js" as="script"><link rel="preload" href="/vuepress/assets/js/30.e9288a15.js" as="script"><link rel="prefetch" href="/vuepress/assets/js/11.8ae341ac.js"><link rel="prefetch" href="/vuepress/assets/js/12.b750a8ec.js"><link rel="prefetch" href="/vuepress/assets/js/13.5b18bfe0.js"><link rel="prefetch" href="/vuepress/assets/js/14.050b612c.js"><link rel="prefetch" href="/vuepress/assets/js/15.e6316c3e.js"><link rel="prefetch" href="/vuepress/assets/js/16.d97b0fc6.js"><link rel="prefetch" href="/vuepress/assets/js/17.33f108d4.js"><link rel="prefetch" href="/vuepress/assets/js/18.a705300d.js"><link rel="prefetch" href="/vuepress/assets/js/19.27e8c6c5.js"><link rel="prefetch" href="/vuepress/assets/js/2.01347abb.js"><link rel="prefetch" href="/vuepress/assets/js/20.7c321921.js"><link rel="prefetch" href="/vuepress/assets/js/21.784f61ff.js"><link rel="prefetch" href="/vuepress/assets/js/22.6e50adab.js"><link rel="prefetch" href="/vuepress/assets/js/23.17bb73d7.js"><link rel="prefetch" href="/vuepress/assets/js/24.a9059532.js"><link rel="prefetch" href="/vuepress/assets/js/25.77b9a258.js"><link rel="prefetch" href="/vuepress/assets/js/26.58e7dbf6.js"><link rel="prefetch" href="/vuepress/assets/js/27.d9338d4a.js"><link rel="prefetch" href="/vuepress/assets/js/28.37058dc2.js"><link rel="prefetch" href="/vuepress/assets/js/29.b77d5d7b.js"><link rel="prefetch" href="/vuepress/assets/js/3.71783a2a.js"><link rel="prefetch" href="/vuepress/assets/js/31.9dc238cb.js"><link rel="prefetch" href="/vuepress/assets/js/32.4378f011.js"><link rel="prefetch" href="/vuepress/assets/js/33.24171307.js"><link rel="prefetch" href="/vuepress/assets/js/34.cb8bd3f3.js"><link rel="prefetch" href="/vuepress/assets/js/35.f57edf06.js"><link rel="prefetch" href="/vuepress/assets/js/36.1f3612bd.js"><link rel="prefetch" href="/vuepress/assets/js/37.ad372c90.js"><link rel="prefetch" href="/vuepress/assets/js/38.9fc2f0f9.js"><link rel="prefetch" href="/vuepress/assets/js/39.d4f6eede.js"><link rel="prefetch" href="/vuepress/assets/js/4.8efaee7e.js"><link rel="prefetch" href="/vuepress/assets/js/40.8e50ba35.js"><link rel="prefetch" href="/vuepress/assets/js/41.e2fc6059.js"><link rel="prefetch" href="/vuepress/assets/js/42.96c19cfc.js"><link rel="prefetch" href="/vuepress/assets/js/5.9afcbcb5.js"><link rel="prefetch" href="/vuepress/assets/js/6.5850648a.js"><link rel="prefetch" href="/vuepress/assets/js/8.e2dc9f20.js"><link rel="prefetch" href="/vuepress/assets/js/vendors~docsearch.9a53a8b3.js">
+    <link rel="stylesheet" href="/vuepress/assets/css/0.styles.168d590a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress/" class="home-link router-link-active"><img src="/vuepress/assets/img/comet.png" alt="小宇博客" class="logo"> <span class="site-name can-hide">小宇博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vuepress/" class="nav-link">
+  ≡ 首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="💻 技术笔记" class="dropdown-title"><span class="title">💻 技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="💻 技术笔记" class="mobile-dropdown-title"><span class="title">💻 技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/html&amp;css/" class="nav-link">
+  HTML &amp; CSS
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/vue/" class="nav-link">
+  Vue
+</a></li></ul></li><li class="dropdown-item"><h4>
+          后端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/" class="nav-link">
+  Java
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/" class="nav-link">
+  Spring Boot
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/japanese/" class="nav-link">
+  Python
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/python爬虫/" class="nav-link">
+  Python爬虫
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/dgango框架/" class="nav-link">
+  Dgango框架
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/guide/数据库学习笔记/" class="nav-link">
+  Mysql数据库
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/数据库学习笔记/" class="nav-link">
+  Redis数据库
+</a></li></ul></li><li class="dropdown-item"><h4>
+          测试运维
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/" class="nav-link">
+  Shell
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🛠 安装部署" class="dropdown-title"><span class="title">🛠 安装部署</span> <span class="arrow down"></span></button> <button type="button" aria-label="🛠 安装部署" class="mobile-dropdown-title"><span class="title">🛠 安装部署</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  jenkins
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  keepalived
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  tomcat
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  ks8
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  nacos
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="💬 常见问题" class="dropdown-title"><span class="title">💬 常见问题</span> <span class="arrow down"></span></button> <button type="button" aria-label="💬 常见问题" class="mobile-dropdown-title"><span class="title">💬 常见问题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/language/chinese/" class="nav-link">
+  
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="📝 面试常问" class="dropdown-title"><span class="title">📝 面试常问</span> <span class="arrow down"></span></button> <button type="button" aria-label="📝 面试常问" class="mobile-dropdown-title"><span class="title">📝 面试常问</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Linux
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🌐 开源项目" class="dropdown-title"><span class="title">🌐 开源项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="🌐 开源项目" class="mobile-dropdown-title"><span class="title">🌐 开源项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Python
+</a></li></ul></div></div><div class="nav-item"><a href="/vuepress/about/about.html" class="nav-link">
+  关于我
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuepress/" class="nav-link">
+  ≡ 首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="💻 技术笔记" class="dropdown-title"><span class="title">💻 技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="💻 技术笔记" class="mobile-dropdown-title"><span class="title">💻 技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/html&amp;css/" class="nav-link">
+  HTML &amp; CSS
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/vue/" class="nav-link">
+  Vue
+</a></li></ul></li><li class="dropdown-item"><h4>
+          后端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/" class="nav-link">
+  Java
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/" class="nav-link">
+  Spring Boot
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/japanese/" class="nav-link">
+  Python
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/python爬虫/" class="nav-link">
+  Python爬虫
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/dgango框架/" class="nav-link">
+  Dgango框架
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/guide/数据库学习笔记/" class="nav-link">
+  Mysql数据库
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/数据库学习笔记/" class="nav-link">
+  Redis数据库
+</a></li></ul></li><li class="dropdown-item"><h4>
+          测试运维
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/" class="nav-link">
+  Shell
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🛠 安装部署" class="dropdown-title"><span class="title">🛠 安装部署</span> <span class="arrow down"></span></button> <button type="button" aria-label="🛠 安装部署" class="mobile-dropdown-title"><span class="title">🛠 安装部署</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  jenkins
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  keepalived
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  tomcat
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  ks8
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  nacos
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="💬 常见问题" class="dropdown-title"><span class="title">💬 常见问题</span> <span class="arrow down"></span></button> <button type="button" aria-label="💬 常见问题" class="mobile-dropdown-title"><span class="title">💬 常见问题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/language/chinese/" class="nav-link">
+  
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="📝 面试常问" class="dropdown-title"><span class="title">📝 面试常问</span> <span class="arrow down"></span></button> <button type="button" aria-label="📝 面试常问" class="mobile-dropdown-title"><span class="title">📝 面试常问</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Linux
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🌐 开源项目" class="dropdown-title"><span class="title">🌐 开源项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="🌐 开源项目" class="mobile-dropdown-title"><span class="title">🌐 开源项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Python
+</a></li></ul></div></div><div class="nav-item"><a href="/vuepress/about/about.html" class="nav-link">
+  关于我
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python爬虫基础学习</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Python爬虫数据存储</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress/guide/python爬虫/02python爬虫数据存储.html" class="active sidebar-link">python爬虫数据存储</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/02python爬虫数据存储.html#一、文件存储" class="sidebar-link">一、文件存储</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/02python爬虫数据存储.html#_1、文本文件" class="sidebar-link">1、文本文件</a></li><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/02python爬虫数据存储.html#_2、csv" class="sidebar-link">2、CSV</a></li><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/02python爬虫数据存储.html#_3、excel" class="sidebar-link">3、Excel</a></li></ul></li><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/02python爬虫数据存储.html#二、数据库存储" class="sidebar-link">二、数据库存储</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/02python爬虫数据存储.html#_1、mysql" class="sidebar-link">1、MySQL</a></li><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/02python爬虫数据存储.html#_2、mongodb" class="sidebar-link">2、MongoDB</a></li><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/02python爬虫数据存储.html#_3、redis" class="sidebar-link">3、Redis</a></li></ul></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Selenium自动化</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="一、文件存储"><a href="#一、文件存储" class="header-anchor">#</a> 一、文件存储</h2> <h3 id="_1、文本文件"><a href="#_1、文本文件" class="header-anchor">#</a> 1、文本文件</h3> <div class="language-python extra-class"><pre class="language-python"><code>data <span class="token operator">=</span> <span class="token string">&quot;这是一些文本数据&quot;</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'data.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token builtin">file</span><span class="token punctuation">:</span>
+    <span class="token builtin">file</span><span class="token punctuation">.</span>write<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+</code></pre></div><p><img src="/vuepress/assets/py/06.png" alt="image-20240611001827558"></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> requests
+<span class="token keyword">import</span> re
+
+url <span class="token operator">=</span> <span class="token string">'https://movie.douban.com/top250'</span>
+headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/5.0'</span><span class="token punctuation">}</span>
+
+<span class="token comment"># 发起请求 返回响应  </span>
+res <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+req <span class="token operator">=</span> res<span class="token punctuation">.</span>text
+
+<span class="token comment"># 解析数据  </span>
+pattern <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r'&lt;li&gt;.*?&lt;div class=&quot;info&quot;&gt;.*?&lt;span class=&quot;title&quot;&gt;(?P&lt;name&gt;.*?)&lt;/span&gt;'</span><span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+
+<span class="token comment"># 打开文件准备写入  </span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'movies.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    <span class="token comment"># 开始匹配并写入文件  </span>
+    <span class="token keyword">for</span> <span class="token keyword">match</span> <span class="token keyword">in</span> pattern<span class="token punctuation">.</span>finditer<span class="token punctuation">(</span>req<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        movie_name <span class="token operator">=</span> <span class="token keyword">match</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>movie_name <span class="token operator">+</span> <span class="token string">'\n'</span><span class="token punctuation">)</span>  <span class="token comment"># 每部电影名后添加一个换行符  </span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'电影名已保存到movies.txt文件中'</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_2、csv"><a href="#_2、csv" class="header-anchor">#</a> 2、CSV</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 两种写法</span>
+
+<span class="token comment"># 写法一</span>
+<span class="token keyword">import</span> requests
+<span class="token keyword">import</span> re
+<span class="token keyword">import</span> csv
+
+<span class="token comment"># 豆瓣电影Top 250的URL</span>
+url <span class="token operator">=</span> <span class="token string">'https://movie.douban.com/top250'</span>
+<span class="token comment"># 设置请求头</span>
+headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/5.0'</span><span class="token punctuation">}</span>
+<span class="token comment"># 发起请求 返回响应    timeout设置超时</span>
+res <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+req <span class="token operator">=</span> res<span class="token punctuation">.</span>text
+<span class="token comment"># 解析数据</span>
+obj <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r'&lt;li&gt;.*? &lt;div class=&quot;info&quot;&gt;.*?&lt;span class=&quot;title&quot;&gt;(?P&lt;name&gt;.*?)&lt;/span&gt;'</span><span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+<span class="token comment"># 写入CSV文件</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'movies.csv'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> newline<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> csvfile<span class="token punctuation">:</span>
+    writer <span class="token operator">=</span> csv<span class="token punctuation">.</span>writer<span class="token punctuation">(</span>csvfile<span class="token punctuation">)</span>
+    <span class="token comment"># 写入表头</span>
+    writer<span class="token punctuation">.</span>writerow<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'电影名'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token comment"># writer.writerow(['', '电影名'])  # 第一个元素是空字符串，代表A列  这个写入到的是B列</span>
+
+    <span class="token comment"># 开始匹配  </span>
+    res <span class="token operator">=</span> obj<span class="token punctuation">.</span>finditer<span class="token punctuation">(</span>req<span class="token punctuation">)</span>
+    <span class="token comment"># 遍历匹配项并写入CSV</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> res<span class="token punctuation">:</span>
+        movie_name <span class="token operator">=</span> i<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        writer<span class="token punctuation">.</span>writerow<span class="token punctuation">(</span><span class="token punctuation">[</span>movie_name<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'电影名：'</span><span class="token punctuation">,</span> i<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'电影名已保存到movies.csv文件中'</span><span class="token punctuation">)</span>
+
+    
+
+
+<span class="token comment"># 写法二</span>
+
+<span class="token keyword">import</span> requests
+<span class="token keyword">import</span> re
+<span class="token keyword">import</span> csv
+
+<span class="token comment"># 豆瓣电影Top 250的URL</span>
+url <span class="token operator">=</span> <span class="token string">'https://movie.douban.com/top250'</span>
+<span class="token comment"># 设置请求头</span>
+headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/5.0'</span><span class="token punctuation">}</span>
+<span class="token comment"># 发起请求 返回响应    timeout设置超时</span>
+res <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+req <span class="token operator">=</span> res<span class="token punctuation">.</span>text
+<span class="token comment"># 解析数据</span>
+obj <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r'&lt;li&gt;.*? &lt;div class=&quot;info&quot;&gt;.*?&lt;span class=&quot;title&quot;&gt;(?P&lt;name&gt;.*?)&lt;/span&gt;'</span><span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+<span class="token comment"># 写入CSV文件</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'movies.csv'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> newline<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> csvfile<span class="token punctuation">:</span>
+    writer <span class="token operator">=</span> csv<span class="token punctuation">.</span>writer<span class="token punctuation">(</span>csvfile<span class="token punctuation">)</span>
+    <span class="token comment"># 写入表头</span>
+    writer<span class="token punctuation">.</span>writerow<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'电影名'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    
+    <span class="token comment">#  遍历匹配项并写入CSV</span>
+     <span class="token keyword">for</span> i <span class="token keyword">in</span> obj<span class="token punctuation">.</span>finditer<span class="token punctuation">(</span>req<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        movie_name <span class="token operator">=</span> i<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        writer<span class="token punctuation">.</span>writerow<span class="token punctuation">(</span><span class="token punctuation">[</span>movie_name<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'电影名：'</span><span class="token punctuation">,</span> i<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'电影名已保存到movies.csv文件中'</span><span class="token punctuation">)</span>
+
+</code></pre></div><p><img src="/vuepress/assets/py/07.png" alt="image-20240611010835078"></p> <h3 id="_3、excel"><a href="#_3、excel" class="header-anchor">#</a> 3、Excel</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 先终端安装三方库</span>
+pip install xlwt
+
+<span class="token comment"># 或者安装pandas库</span>
+
+<span class="token comment">#或者安装另外一个库</span>
+pip install openpyxl
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> openpyxl <span class="token keyword">import</span> Workbook
+
+<span class="token comment"># 要保存的文本数据  </span>
+data <span class="token operator">=</span> <span class="token string">&quot;这是一些文本数据&quot;</span>
+
+<span class="token comment"># 创建一个新的工作簿  </span>
+wb <span class="token operator">=</span> Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ws <span class="token operator">=</span> wb<span class="token punctuation">.</span>active  <span class="token comment"># 获取活动工作表  </span>
+
+<span class="token comment"># 将文本数据写入A1单元格  </span>
+ws<span class="token punctuation">[</span><span class="token string">'A2'</span><span class="token punctuation">]</span> <span class="token operator">=</span> data
+
+<span class="token comment"># 保存工作簿到文件  </span>
+wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">&quot;data.xlsx&quot;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'文本数据已保存到data.xlsx文件中'</span><span class="token punctuation">)</span>
+</code></pre></div><p><img src="/vuepress/assets/py/08.png" alt="image-20240611012651791"></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> requests  <span class="token comment"># 导入requests库，用于发送HTTP请求  </span>
+<span class="token keyword">import</span> re  <span class="token comment"># 导入re库，用于执行正则表达式匹配  </span>
+<span class="token keyword">from</span> openpyxl <span class="token keyword">import</span> Workbook  <span class="token comment"># 从openpyxl库中导入Workbook类，用于创建Excel工作簿  </span>
+
+url <span class="token operator">=</span> <span class="token string">'https://movie.douban.com/top250'</span>  <span class="token comment"># 设置豆瓣电影Top 250的URL  </span>
+headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/5.0'</span><span class="token punctuation">}</span>  <span class="token comment"># 设置请求头，伪装成浏览器发送请求  </span>
+
+<span class="token comment"># 发起HTTP GET请求到指定的URL，并传入请求头信息  </span>
+res <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+req <span class="token operator">=</span> res<span class="token punctuation">.</span>text  <span class="token comment"># 将请求的响应内容存储为文本字符串  </span>
+
+<span class="token comment"># 定义一个正则表达式，用于从HTML中匹配电影名  </span>
+obj <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r'&lt;li&gt;.*? &lt;div class=&quot;info&quot;&gt;.*?&lt;span class=&quot;title&quot;&gt;(?P&lt;name&gt;.*?)&lt;/span&gt;'</span><span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+
+<span class="token comment"># 创建一个新的Excel工作簿对象  </span>
+wb <span class="token operator">=</span> Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ws <span class="token operator">=</span> wb<span class="token punctuation">.</span>active  <span class="token comment"># 获取工作簿中的活动工作表（默认创建的第一个工作表）  </span>
+ws<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">&quot;电影列表&quot;</span>  <span class="token comment"># 设置工作表的标题为“电影列表”  </span>
+
+<span class="token comment"># 在工作表中写入表头  </span>
+ws<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&quot;电影名&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 遍历正则表达式匹配到的结果  </span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> obj<span class="token punctuation">.</span>finditer<span class="token punctuation">(</span>req<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    movie_name <span class="token operator">=</span> i<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 提取匹配到的电影名，并去除两端的空白字符  </span>
+    ws<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span>movie_name<span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 将电影名写入Excel工作表的下一行  </span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'电影名：'</span><span class="token punctuation">,</span> movie_name<span class="token punctuation">)</span>  <span class="token comment"># 在控制台打印电影名  </span>
+
+<span class="token comment"># 保存Excel工作簿到文件  </span>
+wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">&quot;movies.xlsx&quot;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'电影名已保存到movies.xlsx文件中'</span><span class="token punctuation">)</span>  <span class="token comment"># 在控制台打印提示信息</span>
+</code></pre></div><p><img src="/vuepress/assets/py/09.png" alt="image-20240611012939017"></p> <div class="language-python extra-class"><pre class="language-python"><code>
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd  <span class="token comment"># 导入pandas库</span>
+<span class="token comment"># 定义电影名称和评分列表</span>
+film_names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'霸王别姬-Farnewell My Concubine'</span><span class="token punctuation">,</span> <span class="token string">'这个杀手不太冷-Leon'</span><span class="token punctuation">,</span><span class="token string">'肖申克的救赎-The Shawshank Redemption'</span><span class="token punctuation">]</span>
+scores <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'9.5'</span><span class="token punctuation">,</span> <span class="token string">'9.4'</span><span class="token punctuation">,</span> <span class="token string">'9.7'</span><span class="token punctuation">]</span>
+
+<span class="token comment"># 创建一个空的DataFrame</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># 使用列表来设置DataFrame的列</span>
+df<span class="token punctuation">[</span><span class="token string">&quot;电影名称&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> film_names
+df<span class="token punctuation">[</span><span class="token string">&quot;评分&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> scores
+
+<span class="token comment"># 打印DataFrame，注意print函数的括号要闭合</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span>
+
+<span class="token comment"># 将DataFrame保存到Excel文件  </span>
+df<span class="token punctuation">.</span>to_excel<span class="token punctuation">(</span><span class="token string">&quot;电影信息.xlsx&quot;</span><span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>  <span class="token comment"># index=False 不会有索引号</span>
+</code></pre></div><p><img src="/vuepress/assets/py/10.png" alt="image-20240612003341648"></p> <ul><li><h4 id="json"><a href="#json" class="header-anchor">#</a> JSON</h4></li></ul> <div class="language- extra-class"><pre class="language-text"><code>
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> requests
+<span class="token keyword">import</span> re
+<span class="token keyword">import</span> json
+
+<span class="token comment"># 设置URL和请求头</span>
+url <span class="token operator">=</span> <span class="token string">'https://movie.douban.com/top250'</span>
+headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/5.0'</span><span class="token punctuation">}</span>
+
+<span class="token comment"># 发起请求并获取响应</span>
+res <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+req <span class="token operator">=</span> res<span class="token punctuation">.</span>text
+
+<span class="token comment"># 定义正则表达式并匹配电影名</span>
+obj <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r'&lt;li&gt;.*?&lt;div class=&quot;info&quot;&gt;.*?&lt;span class=&quot;title&quot;&gt;(?P&lt;name&gt;.*?)&lt;/span&gt;'</span><span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+matches <span class="token operator">=</span> obj<span class="token punctuation">.</span>finditer<span class="token punctuation">(</span>req<span class="token punctuation">)</span>
+
+<span class="token comment"># 提取电影名并保存到列表中</span>
+movie_names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token keyword">match</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> <span class="token keyword">match</span> <span class="token keyword">in</span> matches<span class="token punctuation">]</span>
+
+<span class="token comment"># 将电影名列表转换为字典格式，便于保存为JSON</span>
+movies_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">&quot;movie_names&quot;</span><span class="token punctuation">:</span> movie_names<span class="token punctuation">}</span>
+
+<span class="token comment"># 将字典保存到JSON文件中</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'movies.json'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> json_file<span class="token punctuation">:</span>
+    json<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>movies_dict<span class="token punctuation">,</span> json_file<span class="token punctuation">,</span> ensure_ascii<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> indent<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'电影名已保存到movies.json文件中'</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="二、数据库存储"><a href="#二、数据库存储" class="header-anchor">#</a> 二、数据库存储</h2> <h3 id="_1、mysql"><a href="#_1、mysql" class="header-anchor">#</a> 1、MySQL</h3> <h3 id="_2、mongodb"><a href="#_2、mongodb" class="header-anchor">#</a> 2、MongoDB</h3> <h3 id="_3、redis"><a href="#_3、redis" class="header-anchor">#</a> 3、Redis</h3></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vuepress/guide/python爬虫/01python爬虫基础.html" class="prev">
+        Python爬虫基础学习
+      </a></span> <span class="next"><a href="/vuepress/guide/python爬虫/03selenium自动化.html">
+        Selenium自动化
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/vuepress/assets/js/app.63c31dc8.js" defer></script><script src="/vuepress/assets/js/7.b0879730.js" defer></script><script src="/vuepress/assets/js/1.e3575c5c.js" defer></script><script src="/vuepress/assets/js/30.e9288a15.js" defer></script>
+  </body>
+</html>

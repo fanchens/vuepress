@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Python爬虫基础学习 | 小宇博客</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/vuepress/assets/img/favicon.ico">
+    <meta name="description" content="我的个人博客">
+    
+    <link rel="preload" href="/vuepress/assets/css/0.styles.168d590a.css" as="style"><link rel="preload" href="/vuepress/assets/js/app.63c31dc8.js" as="script"><link rel="preload" href="/vuepress/assets/js/7.b0879730.js" as="script"><link rel="preload" href="/vuepress/assets/js/1.e3575c5c.js" as="script"><link rel="preload" href="/vuepress/assets/js/29.b77d5d7b.js" as="script"><link rel="prefetch" href="/vuepress/assets/js/11.8ae341ac.js"><link rel="prefetch" href="/vuepress/assets/js/12.b750a8ec.js"><link rel="prefetch" href="/vuepress/assets/js/13.5b18bfe0.js"><link rel="prefetch" href="/vuepress/assets/js/14.050b612c.js"><link rel="prefetch" href="/vuepress/assets/js/15.e6316c3e.js"><link rel="prefetch" href="/vuepress/assets/js/16.d97b0fc6.js"><link rel="prefetch" href="/vuepress/assets/js/17.33f108d4.js"><link rel="prefetch" href="/vuepress/assets/js/18.a705300d.js"><link rel="prefetch" href="/vuepress/assets/js/19.27e8c6c5.js"><link rel="prefetch" href="/vuepress/assets/js/2.01347abb.js"><link rel="prefetch" href="/vuepress/assets/js/20.7c321921.js"><link rel="prefetch" href="/vuepress/assets/js/21.784f61ff.js"><link rel="prefetch" href="/vuepress/assets/js/22.6e50adab.js"><link rel="prefetch" href="/vuepress/assets/js/23.17bb73d7.js"><link rel="prefetch" href="/vuepress/assets/js/24.a9059532.js"><link rel="prefetch" href="/vuepress/assets/js/25.77b9a258.js"><link rel="prefetch" href="/vuepress/assets/js/26.58e7dbf6.js"><link rel="prefetch" href="/vuepress/assets/js/27.d9338d4a.js"><link rel="prefetch" href="/vuepress/assets/js/28.37058dc2.js"><link rel="prefetch" href="/vuepress/assets/js/3.71783a2a.js"><link rel="prefetch" href="/vuepress/assets/js/30.e9288a15.js"><link rel="prefetch" href="/vuepress/assets/js/31.9dc238cb.js"><link rel="prefetch" href="/vuepress/assets/js/32.4378f011.js"><link rel="prefetch" href="/vuepress/assets/js/33.24171307.js"><link rel="prefetch" href="/vuepress/assets/js/34.cb8bd3f3.js"><link rel="prefetch" href="/vuepress/assets/js/35.f57edf06.js"><link rel="prefetch" href="/vuepress/assets/js/36.1f3612bd.js"><link rel="prefetch" href="/vuepress/assets/js/37.ad372c90.js"><link rel="prefetch" href="/vuepress/assets/js/38.9fc2f0f9.js"><link rel="prefetch" href="/vuepress/assets/js/39.d4f6eede.js"><link rel="prefetch" href="/vuepress/assets/js/4.8efaee7e.js"><link rel="prefetch" href="/vuepress/assets/js/40.8e50ba35.js"><link rel="prefetch" href="/vuepress/assets/js/41.e2fc6059.js"><link rel="prefetch" href="/vuepress/assets/js/42.96c19cfc.js"><link rel="prefetch" href="/vuepress/assets/js/5.9afcbcb5.js"><link rel="prefetch" href="/vuepress/assets/js/6.5850648a.js"><link rel="prefetch" href="/vuepress/assets/js/8.e2dc9f20.js"><link rel="prefetch" href="/vuepress/assets/js/vendors~docsearch.9a53a8b3.js">
+    <link rel="stylesheet" href="/vuepress/assets/css/0.styles.168d590a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress/" class="home-link router-link-active"><img src="/vuepress/assets/img/comet.png" alt="小宇博客" class="logo"> <span class="site-name can-hide">小宇博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vuepress/" class="nav-link">
+  ≡ 首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="💻 技术笔记" class="dropdown-title"><span class="title">💻 技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="💻 技术笔记" class="mobile-dropdown-title"><span class="title">💻 技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/html&amp;css/" class="nav-link">
+  HTML &amp; CSS
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/vue/" class="nav-link">
+  Vue
+</a></li></ul></li><li class="dropdown-item"><h4>
+          后端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/" class="nav-link">
+  Java
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/" class="nav-link">
+  Spring Boot
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/japanese/" class="nav-link">
+  Python
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/python爬虫/" class="nav-link">
+  Python爬虫
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/dgango框架/" class="nav-link">
+  Dgango框架
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/guide/数据库学习笔记/" class="nav-link">
+  Mysql数据库
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/数据库学习笔记/" class="nav-link">
+  Redis数据库
+</a></li></ul></li><li class="dropdown-item"><h4>
+          测试运维
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/" class="nav-link">
+  Shell
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🛠 安装部署" class="dropdown-title"><span class="title">🛠 安装部署</span> <span class="arrow down"></span></button> <button type="button" aria-label="🛠 安装部署" class="mobile-dropdown-title"><span class="title">🛠 安装部署</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  jenkins
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  keepalived
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  tomcat
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  ks8
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  nacos
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="💬 常见问题" class="dropdown-title"><span class="title">💬 常见问题</span> <span class="arrow down"></span></button> <button type="button" aria-label="💬 常见问题" class="mobile-dropdown-title"><span class="title">💬 常见问题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/language/chinese/" class="nav-link">
+  
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="📝 面试常问" class="dropdown-title"><span class="title">📝 面试常问</span> <span class="arrow down"></span></button> <button type="button" aria-label="📝 面试常问" class="mobile-dropdown-title"><span class="title">📝 面试常问</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Linux
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🌐 开源项目" class="dropdown-title"><span class="title">🌐 开源项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="🌐 开源项目" class="mobile-dropdown-title"><span class="title">🌐 开源项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Python
+</a></li></ul></div></div><div class="nav-item"><a href="/vuepress/about/about.html" class="nav-link">
+  关于我
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuepress/" class="nav-link">
+  ≡ 首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="💻 技术笔记" class="dropdown-title"><span class="title">💻 技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="💻 技术笔记" class="mobile-dropdown-title"><span class="title">💻 技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/html&amp;css/" class="nav-link">
+  HTML &amp; CSS
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/vue/" class="nav-link">
+  Vue
+</a></li></ul></li><li class="dropdown-item"><h4>
+          后端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/" class="nav-link">
+  Java
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/" class="nav-link">
+  Spring Boot
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/japanese/" class="nav-link">
+  Python
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/python爬虫/" class="nav-link">
+  Python爬虫
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/dgango框架/" class="nav-link">
+  Dgango框架
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/guide/数据库学习笔记/" class="nav-link">
+  Mysql数据库
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/数据库学习笔记/" class="nav-link">
+  Redis数据库
+</a></li></ul></li><li class="dropdown-item"><h4>
+          测试运维
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-subitem"><a href="/vuepress/guide/前端学习笔记/" class="nav-link">
+  Shell
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🛠 安装部署" class="dropdown-title"><span class="title">🛠 安装部署</span> <span class="arrow down"></span></button> <button type="button" aria-label="🛠 安装部署" class="mobile-dropdown-title"><span class="title">🛠 安装部署</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  jenkins
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  keepalived
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  tomcat
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  maven
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  ks8
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  nacos
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="💬 常见问题" class="dropdown-title"><span class="title">💬 常见问题</span> <span class="arrow down"></span></button> <button type="button" aria-label="💬 常见问题" class="mobile-dropdown-title"><span class="title">💬 常见问题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/language/chinese/" class="nav-link">
+  
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="📝 面试常问" class="dropdown-title"><span class="title">📝 面试常问</span> <span class="arrow down"></span></button> <button type="button" aria-label="📝 面试常问" class="mobile-dropdown-title"><span class="title">📝 面试常问</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Linux
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🌐 开源项目" class="dropdown-title"><span class="title">🌐 开源项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="🌐 开源项目" class="mobile-dropdown-title"><span class="title">🌐 开源项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress/guide/python%E7%88%AC%E8%99%AB/.html#" class="nav-link">
+  Python
+</a></li></ul></div></div><div class="nav-item"><a href="/vuepress/about/about.html" class="nav-link">
+  关于我
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Python爬虫基础学习</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress/guide/python爬虫/01python爬虫基础.html" class="active sidebar-link">Python爬虫基础学习</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/01python爬虫基础.html#一、爬虫简介" class="sidebar-link">一、爬虫简介</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/01python爬虫基础.html#_1、爬虫的定义" class="sidebar-link">1、爬虫的定义</a></li><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/01python爬虫基础.html#_2、robots协议" class="sidebar-link">2、Robots协议</a></li></ul></li><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/01python爬虫基础.html#二、网页获取-爬虫基础" class="sidebar-link">二、网页获取(爬虫基础)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/01python爬虫基础.html#_1、requests库" class="sidebar-link">1、requests库</a></li><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/01python爬虫基础.html#_2、urllib库" class="sidebar-link">2、urllib库</a></li><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/01python爬虫基础.html#_3、异常处理" class="sidebar-link">3、异常处理</a></li><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/01python爬虫基础.html#_4、使用代理和cookie" class="sidebar-link">4、使用代理和cookie</a></li></ul></li><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/01python爬虫基础.html#三、网页解析-爬虫进阶" class="sidebar-link">三、网页解析（爬虫进阶）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/01python爬虫基础.html#_1、正则表达式-re" class="sidebar-link">1、正则表达式（re）</a></li><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/01python爬虫基础.html#_2、re模块" class="sidebar-link">2、re模块</a></li><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/01python爬虫基础.html#_3、beautifulsoup" class="sidebar-link">3、BeautifulSoup</a></li><li class="sidebar-sub-header"><a href="/vuepress/guide/python爬虫/01python爬虫基础.html#_4、lxml和xpath" class="sidebar-link">4、lxml和XPath</a></li></ul></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python爬虫数据存储</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Selenium自动化</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="一、爬虫简介"><a href="#一、爬虫简介" class="header-anchor">#</a> 一、爬虫简介</h2> <h3 id="_1、爬虫的定义"><a href="#_1、爬虫的定义" class="header-anchor">#</a> 1、爬虫的定义</h3> <p>爬虫，又称为网页蜘蛛或网络机器人，是一种模拟人操作客户端（如浏览器、APP）向服务器发起网络请求以抓取数据的自动化程序或脚本。它按照一定的规则，自动地抓取万维网信息，被广泛应用于数据收集、处理和分析。</p> <h3 id="_2、robots协议"><a href="#_2、robots协议" class="header-anchor">#</a> 2、Robots协议</h3> <p>Robots协议（也称为爬虫协议、机器人协议等），全称是“网络爬虫排除标准”（Robots Exclusion Protocol）。这是一个网站可以建立的robots.txt文件，用于告诉搜索引擎哪些页面可以抓取，哪些页面不能抓取。搜索引擎会读取robots.txt文件来识别这个页面是否允许被抓取。然而，这个协议并不具有强制执行力，搜索引擎可以选择忽略它。</p> <h2 id="二、网页获取-爬虫基础"><a href="#二、网页获取-爬虫基础" class="header-anchor">#</a> 二、网页获取(爬虫基础)</h2> <h3 id="_1、requests库"><a href="#_1、requests库" class="header-anchor">#</a> 1、requests库</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 安装requests库</span>
+
+pip install requests
+
+<span class="token comment"># 引入模块</span>
+<span class="token keyword">import</span> requests
+</code></pre></div><ul><li><h4 id="requests库的七个主要方法"><a href="#requests库的七个主要方法" class="header-anchor">#</a> Requests库的七个主要方法：</h4></li></ul> <table><thead><tr><th style="text-align:left;">Requests库的七个主要方法：</th></tr></thead> <tbody><tr><td style="text-align:left;">requests.request()	构造一个请求，支持以下各种方法</td></tr> <tr><td style="text-align:left;">requests.get()		获取html的主要方法</td></tr> <tr><td style="text-align:left;">requests.head()		获取html头部信息的主要方法</td></tr> <tr><td style="text-align:left;">requests.post()		向htm</td></tr> <tr><td style="text-align:left;">requests.put()		向htmlI网页提交put请求的方法</td></tr> <tr><td style="text-align:left;">requests.patch()		向html提交局部修改的请求</td></tr> <tr><td style="text-align:left;">requests.delete()		向html提交删除请求</td></tr></tbody></table> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># requests.request()</span>
+
+<span class="token keyword">import</span> requests  <span class="token comment"># 导入requests库  </span>
+  
+<span class="token comment"># 构造一个GET请求到httpbin.org的get接口  </span>
+url <span class="token operator">=</span> <span class="token string">'https://httpbin.org/get'</span>  
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>request<span class="token punctuation">(</span><span class="token string">'GET'</span><span class="token punctuation">,</span> url<span class="token punctuation">)</span>  <span class="token comment"># 使用requests.request()方法发送GET请求  </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span>  <span class="token comment"># 打印响应的文本内容</span>
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># requests.get()</span>
+
+<span class="token keyword">import</span> requests  <span class="token comment"># 导入requests库  </span>
+  
+<span class="token comment"># 发送GET请求到httpbin.org的get接口  </span>
+url <span class="token operator">=</span> <span class="token string">'https://httpbin.org/get'</span>  
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span>  <span class="token comment"># 使用requests.get()方法发送GET请求  </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span>  <span class="token comment"># 打印响应的文本内容</span>
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># requests.head()</span>
+
+<span class="token keyword">import</span> requests  <span class="token comment"># 导入requests库  </span>
+  
+<span class="token comment"># 发送HEAD请求到httpbin.org的get接口，只获取头部信息  </span>
+url <span class="token operator">=</span> <span class="token string">'https://httpbin.org/get'</span>  
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>head<span class="token punctuation">(</span>url<span class="token punctuation">)</span>  <span class="token comment"># 使用requests.head()方法发送HEAD请求  </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>headers<span class="token punctuation">)</span>  <span class="token comment"># 打印响应的头部信息</span>
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># requests.post()</span>
+
+<span class="token keyword">import</span> requests  <span class="token comment"># 导入requests库  </span>
+  
+<span class="token comment"># 发送POST请求到httpbin.org的post接口，并附带表单数据  </span>
+url <span class="token operator">=</span> <span class="token string">'https://httpbin.org/post'</span>  
+payload <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'key1'</span><span class="token punctuation">:</span> <span class="token string">'value1'</span><span class="token punctuation">,</span> <span class="token string">'key2'</span><span class="token punctuation">:</span> <span class="token string">'value2'</span><span class="token punctuation">}</span>  
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token punctuation">,</span> data<span class="token operator">=</span>payload<span class="token punctuation">)</span>  <span class="token comment"># 使用requests.post()方法发送POST请求，并附带表单数据  </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span>  <span class="token comment"># 打印响应的文本内容</span>
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># requests.put()</span>
+
+<span class="token keyword">import</span> requests  <span class="token comment"># 导入requests库  </span>
+  
+<span class="token comment"># 发送PUT请求到httpbin.org的put接口，并附带数据以更新资源  </span>
+url <span class="token operator">=</span> <span class="token string">'https://httpbin.org/put'</span>  
+payload <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'key1'</span><span class="token punctuation">:</span> <span class="token string">'value1'</span><span class="token punctuation">,</span> <span class="token string">'key2'</span><span class="token punctuation">:</span> <span class="token string">'value2'</span><span class="token punctuation">}</span>  
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>put<span class="token punctuation">(</span>url<span class="token punctuation">,</span> data<span class="token operator">=</span>payload<span class="token punctuation">)</span>  <span class="token comment"># 使用requests.put()方法发送PUT请求，并附带数据  </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span>  <span class="token comment"># 打印响应的文本内容</span>
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># requests.patch()</span>
+
+<span class="token keyword">import</span> requests  <span class="token comment"># 导入requests库  </span>
+  
+<span class="token comment"># 发送PATCH请求到httpbin.org的patch接口，并附带数据以局部更新资源  </span>
+url <span class="token operator">=</span> <span class="token string">'https://httpbin.org/patch'</span>  
+payload <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'key1'</span><span class="token punctuation">:</span> <span class="token string">'newValue1'</span><span class="token punctuation">}</span>  
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>patch<span class="token punctuation">(</span>url<span class="token punctuation">,</span> data<span class="token operator">=</span>payload<span class="token punctuation">)</span>  <span class="token comment"># 使用requests.patch()方法发送PATCH请求，并附带数据  </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span>  <span class="token comment"># 打印响应的文本内容</span>
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># requests.delete()</span>
+
+<span class="token keyword">import</span> requests  <span class="token comment"># 导入requests库  </span>
+  
+<span class="token comment"># 发送DELETE请求到httpbin.org的delete接口，以删除资源  </span>
+url <span class="token operator">=</span> <span class="token string">'https://httpbin.org/delete'</span>  
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>delete<span class="token punctuation">(</span>url<span class="token punctuation">)</span>  <span class="token comment"># 使用requests.delete()方法发送DELETE请求  </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span>  <span class="token comment"># 打印响应的文本内容</span>
+</code></pre></div><ul><li><h4 id="常用属性和方法"><a href="#常用属性和方法" class="header-anchor">#</a> 常用属性和方法</h4></li></ul> <table><thead><tr><th>常用属性和方法</th></tr></thead> <tbody><tr><td><code>res.text</code>    响应的文本内容</td></tr> <tr><td>res.content     bytes 以字节形式（二进制）返回</td></tr> <tr><td>res.encoding      响应内容的编码方式</td></tr> <tr><td>res.content.decode('utf-8')</td></tr> <tr><td>res.status_code   HTTP响应的状态码（如200, 404等）</td></tr> <tr><td>res.url    	  	数据url地址</td></tr> <tr><td>res.headers       请求头</td></tr> <tr><td>rea.cookies		 cookies</td></tr></tbody></table> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> requests
+
+<span class="token comment"># 发送一个请求</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'https://httpbin.org/get'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 访问属性</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;响应文本内容: </span><span class="token interpolation"><span class="token punctuation">{</span>response<span class="token punctuation">.</span>text<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;响应原始内容（字节串）: </span><span class="token interpolation"><span class="token punctuation">{</span>response<span class="token punctuation">.</span>content<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;响应内容编码: </span><span class="token interpolation"><span class="token punctuation">{</span>response<span class="token punctuation">.</span>encoding<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;HTTP响应状态码: </span><span class="token interpolation"><span class="token punctuation">{</span>response<span class="token punctuation">.</span>status_code<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;请求的URL: </span><span class="token interpolation"><span class="token punctuation">{</span>response<span class="token punctuation">.</span>url<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;响应头部信息: </span><span class="token interpolation"><span class="token punctuation">{</span>response<span class="token punctuation">.</span>headers<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+</code></pre></div><ul><li><h4 id="语法格式"><a href="#语法格式" class="header-anchor">#</a> 语法格式</h4></li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> requests  <span class="token comment"># 导入requests库，这是一个用于发送HTTP请求的Python库</span>
+
+<span class="token comment"># 输入网站 设置请求</span>
+url <span class="token operator">=</span> <span class="token string">'https://www.baidu.com'</span>  <span class="token comment"># 定义一个变量url，并将其设置为百度网站的网址</span>
+
+<span class="token comment"># 设置请求头，模拟的浏览器用户代理信息，以避免被网站识别为爬虫而拒绝服务</span>
+headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/5.0 '</span><span class="token punctuation">}</span>  <span class="token comment"># 定义一个字典headers，用于设置HTTP请求头中的User-Agent字段</span>
+
+<span class="token comment"># 发送HTTP请求，使用requests库的get方法，向指定的url发送GET请求，并带上自定义的请求头headers</span>
+res <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span>timeout<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>  <span class="token comment"># 发送GET请求，并将响应对象赋值给变量res</span>
+
+<span class="token comment"># 设置响应内容的编码格式为utf-8，以确保中文字符能够正确显示</span>
+res<span class="token punctuation">.</span>encoding <span class="token operator">=</span> <span class="token string">'utf-8'</span>  <span class="token comment"># 设置响应内容的编码为utf-8</span>
+
+<span class="token comment"># 打印响应内容，即网站的HTML代码</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>text<span class="token punctuation">)</span>  <span class="token comment"># 输出响应的文本内容</span>
+</code></pre></div><p><img src="/vuepress/assets/py/01.png" alt="image-20240604044845801"></p> <h3 id="_2、urllib库"><a href="#_2、urllib库" class="header-anchor">#</a> 2、urllib库</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 这个库是python自带的，所以不需要pip install</span>
+
+<span class="token keyword">import</span> urllib<span class="token punctuation">.</span>request
+</code></pre></div><h3 id="_3、异常处理"><a href="#_3、异常处理" class="header-anchor">#</a> 3、异常处理</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> requests
+<span class="token keyword">from</span> requests<span class="token punctuation">.</span>exceptions <span class="token keyword">import</span> RequestException<span class="token punctuation">,</span> Timeout<span class="token punctuation">,</span> ConnectionError
+<span class="token keyword">from</span> requests<span class="token punctuation">.</span>exceptions <span class="token keyword">import</span> HTTPError  <span class="token comment"># 导入HTTPError异常</span>
+
+<span class="token comment"># 尝试发送GET请求，并设置超时时间为5秒</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'https://httpbin.org/get'</span><span class="token punctuation">,</span> timeout<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 检查HTTP状态码，如果不是200-299之间，则抛出HTTPError异常</span>
+    response<span class="token punctuation">.</span>raise_for_status<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 这里会抛出HTTPError，如果状态码不是200-299</span>
+
+    <span class="token comment"># 如果请求成功（即状态码是200-299），打印响应内容</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+
+<span class="token keyword">except</span> HTTPError <span class="token keyword">as</span> httperr<span class="token punctuation">:</span>
+    <span class="token comment"># 如果HTTP状态码表示错误（不是200-299），则捕获HTTPError异常</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;HTTP错误: </span><span class="token interpolation"><span class="token punctuation">{</span>httperr<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+
+<span class="token keyword">except</span> Timeout <span class="token keyword">as</span> timeouterr<span class="token punctuation">:</span>
+    <span class="token comment"># 捕获请求超时异常</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;请求超时: </span><span class="token interpolation"><span class="token punctuation">{</span>timeouterr<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+
+<span class="token keyword">except</span> ConnectionError <span class="token keyword">as</span> connerr<span class="token punctuation">:</span>
+    <span class="token comment"># 捕获连接错误，如DNS解析失败、拒绝连接等</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;连接错误: </span><span class="token interpolation"><span class="token punctuation">{</span>connerr<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+
+<span class="token keyword">except</span> RequestException <span class="token keyword">as</span> reqerr<span class="token punctuation">:</span>
+    <span class="token comment"># 捕获requests库抛出的其他所有异常</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;发生网络异常: </span><span class="token interpolation"><span class="token punctuation">{</span>reqerr<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># 注意：其他类型的异常（非requests库抛出的）不会由上述except块捕获</span>
+<span class="token comment"># 如果你需要捕获这些异常，可以添加一个额外的except块来捕获Exception（谨慎使用）</span>
+<span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+    <span class="token comment"># 捕获其他所有异常（谨慎使用，因为它可能会隐藏一些你不想忽视的错误）</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;发生未知异常: </span><span class="token interpolation"><span class="token punctuation">{</span>e<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_4、使用代理和cookie"><a href="#_4、使用代理和cookie" class="header-anchor">#</a> 4、使用代理和cookie</h3> <ul><li><h4 id="代理"><a href="#代理" class="header-anchor">#</a> 代理</h4></li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> requests
+
+<span class="token comment"># 假设你有以下代理信息</span>
+proxies <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;http&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;http://10.10.1.10:3128&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;https&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;http://10.10.1.10:1080&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+url <span class="token operator">=</span> <span class="token string">'https://www.baidu.com'</span>
+<span class="token comment"># 发送GET请求并通过代理</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span> proxies<span class="token operator">=</span>proxies<span class="token punctuation">)</span>
+
+<span class="token comment"># 处理响应</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+</code></pre></div><ul><li><h4 id="cookie"><a href="#cookie" class="header-anchor">#</a> cookie</h4></li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> requests  
+  
+<span class="token comment"># 假设你有以下cookie信息，它应该是一个字典，其中键是cookie的名字，值是cookie的值  </span>
+cookies <span class="token operator">=</span> <span class="token punctuation">{</span>  
+    <span class="token string">'cookie_name1'</span><span class="token punctuation">:</span> <span class="token string">'cookie_value1'</span><span class="token punctuation">,</span>  
+    <span class="token string">'cookie_name2'</span><span class="token punctuation">:</span> <span class="token string">'cookie_value2'</span><span class="token punctuation">,</span>  
+    <span class="token comment"># ... 其他cookie  </span>
+<span class="token punctuation">}</span>  
+  
+<span class="token comment"># 发送GET请求并包含cookie  </span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'http://example.com'</span><span class="token punctuation">,</span> cookies<span class="token operator">=</span>cookies<span class="token punctuation">)</span>  
+  
+<span class="token comment"># 处理响应  </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+</code></pre></div><h2 id="三、网页解析-爬虫进阶"><a href="#三、网页解析-爬虫进阶" class="header-anchor">#</a> 三、网页解析（爬虫进阶）</h2> <h3 id="_1、正则表达式-re"><a href="#_1、正则表达式-re" class="header-anchor">#</a> 1、正则表达式（re）</h3> <ul><li><h4 id="元字符"><a href="#元字符" class="header-anchor">#</a> 元字符</h4></li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token punctuation">.</span>    匹配除换行符以外的任意字符
+
+\w    匹配字母或数字或下划线
+
+\s    匹配任意的空白符
+
+\d    匹配数字
+
+\n    匹配一个接行符<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>——不常用
+
+\t    匹配一个制表符<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>——不常用
+
+<span class="token operator">^</span>    匹配字符串的开始<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>——不常用
+
+$    匹配字符串的结尾<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>——不常用
+
+\W    匹配非字母或数字或下划线
+
+\D    匹配非数字
+
+\S    匹配非空白符
+
+a<span class="token operator">|</span>b   匹配字符a或者是字符b
+
+<span class="token punctuation">(</span><span class="token punctuation">)</span>    匹配括号内的表达式，也表示一个组
+
+<span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>  匹配<span class="token punctuation">[</span><span class="token punctuation">]</span>中的字符
+
+<span class="token punctuation">[</span><span class="token operator">^</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span> 匹配除了<span class="token punctuation">[</span><span class="token punctuation">]</span>中字符的所有字符
+
+
+<span class="token comment"># 量词:控制前面的元字符出现的次数</span>
+
+
+ <span class="token operator">*</span> 	 重复零次或更多次
+
+ <span class="token operator">+</span> 	 重复一次或更多次
+
+ ？   重复零次或一次
+
+ <span class="token punctuation">{</span>n<span class="token punctuation">}</span>  重复n次
+
+ <span class="token punctuation">{</span>n<span class="token punctuation">,</span><span class="token punctuation">}</span>  重复n次或更多次
+
+ <span class="token punctuation">{</span>n<span class="token punctuation">,</span>m<span class="token punctuation">}</span> 重复n到m次
+
+<span class="token comment"># 贪婪匹配和惰性匹配</span>
+
+<span class="token punctuation">.</span><span class="token operator">*</span>  贪婪匹配
+
+<span class="token punctuation">.</span><span class="token operator">*</span>？惰性匹配
+
+</code></pre></div><h3 id="_2、re模块"><a href="#_2、re模块" class="header-anchor">#</a> 2、<code>re模块</code></h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># re模块是Python自带的，用于处理正则表达式的库，用户无需额外下载或安装。</span>
+
+<span class="token comment"># 引入模块</span>
+<span class="token keyword">import</span> re 
+</code></pre></div><ul><li><h4 id="re模块常用的函数"><a href="#re模块常用的函数" class="header-anchor">#</a> re模块常用的函数</h4></li></ul> <table><thead><tr><th>re模块常用的函数</th></tr></thead> <tbody><tr><td>re.match   从起始位置开始匹配 		一次匹配</td></tr> <tr><td>search 	从任何位置开始匹配		一次匹配</td></tr> <tr><td><strong>re.split</strong>    根据正则表达式对字符串进行分割</td></tr> <tr><td><strong>re.sub()</strong>        替换</td></tr> <tr><td><strong>findall</strong> 	全部匹配	 返回列表</td></tr> <tr><td><strong>finditer</strong></td></tr> <tr><td><strong>re.compile()</strong>    预加载正则表达式内容单独提取</td></tr></tbody></table> <h4 id="_2-1-re-match"><a href="#_2-1-re-match" class="header-anchor">#</a> 2-1 re.match</h4> <div class="language-python extra-class"><pre class="language-python"><code>re<span class="token punctuation">.</span><span class="token keyword">match</span><span class="token punctuation">(</span>pattern<span class="token punctuation">,</span> string<span class="token punctuation">)</span>
+</code></pre></div><ul><li><strong>功能</strong>：从字符串的开头匹配模式。</li> <li><strong>返回值</strong>：如果匹配成功，返回一个匹配对象；否则返回 <code>None</code>。</li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 匹配某字符串以字符h开头</span>
+<span class="token keyword">import</span> re
+ 
+text <span class="token operator">=</span> <span class="token string">&quot;hello world&quot;</span>
+res <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token keyword">match</span><span class="token punctuation">(</span><span class="token string">&quot;h&quot;</span><span class="token punctuation">,</span> text<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 输出: h</span>
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> re
+ 
+result <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token keyword">match</span><span class="token punctuation">(</span><span class="token string">r'Hello'</span><span class="token punctuation">,</span> <span class="token string">'Hello, World!'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 输出: Hello</span>
+</code></pre></div><h4 id="_2-2-search"><a href="#_2-2-search" class="header-anchor">#</a> 2-2 <strong>search</strong></h4> <div class="language-python extra-class"><pre class="language-python"><code>re<span class="token punctuation">.</span>search<span class="token punctuation">(</span>pattern<span class="token punctuation">,</span> string<span class="token punctuation">)</span>
+</code></pre></div><ul><li>功能：在字符串中搜索模式，返回第一个匹配的对象。</li> <li>返回值：如果匹配成功，返回一个匹配对象；否则返回 None。</li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> re
+
+result <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">r'World'</span><span class="token punctuation">,</span> <span class="token string">'Hello, World!'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 输出: World</span>
+</code></pre></div><h4 id="_2-3-re-split"><a href="#_2-3-re-split" class="header-anchor">#</a> 2-3 re.split</h4> <div class="language-python extra-class"><pre class="language-python"><code>re<span class="token punctuation">.</span>split<span class="token punctuation">(</span>pattern<span class="token punctuation">,</span> string<span class="token punctuation">)</span>
+</code></pre></div><ul><li><strong>功能</strong>：根据模式分割字符串。</li> <li><strong>返回值</strong>：返回一个分割后的字符串列表。</li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> re
+
+result <span class="token operator">=</span> re<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">r',\s*'</span><span class="token punctuation">,</span> <span class="token string">'Hello, World,Python,Programming'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>  <span class="token comment"># 输出: ['Hello', 'World', 'Python', 'Programming']</span>
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 给定的URL字符串  </span>
+url <span class="token operator">=</span> <span class="token string">&quot;http://www.baidu.com/python3/image/123.jpg&quot;</span>
+
+<span class="token comment"># 使用split()方法根据&quot;/&quot;字符来分割URL字符串  </span>
+<span class="token comment"># split()方法返回一个列表，其中包含了被&quot;/&quot;分割后的子字符串  </span>
+<span class="token comment"># [-1]表示取这个列表的最后一个元素，即路径的最后一部分（文件名）  </span>
+path <span class="token operator">=</span> url<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">&quot;/&quot;</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token comment"># 打印提取出来的文件名  </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span>  <span class="token comment"># 输出：123.jpg</span>
+</code></pre></div><h4 id="_2-4-re-sub"><a href="#_2-4-re-sub" class="header-anchor">#</a> 2-4 <strong>re.sub()</strong></h4> <div class="language-python extra-class"><pre class="language-python"><code>re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span>pattern<span class="token punctuation">,</span> repl<span class="token punctuation">,</span> string<span class="token punctuation">)</span>
+</code></pre></div><ul><li><strong>功能</strong>：替换字符串中的匹配项。</li> <li><strong>返回值</strong>：返回替换后的字符串。</li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> re
+
+s <span class="token operator">=</span><span class="token string">'&lt; I love programming ！&gt; &lt; you love python ! &gt;'</span>
+
+result <span class="token operator">=</span>re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span><span class="token string">r'&lt; (I.*?)&gt;'</span><span class="token punctuation">,</span><span class="token string">'Marry love python'</span><span class="token punctuation">,</span>s<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>  <span class="token comment"># 输出:  'Marry love python &lt; you love python ! &gt;'</span>
+</code></pre></div><h4 id="_2-5-findall"><a href="#_2-5-findall" class="header-anchor">#</a> 2-5 <strong>findall</strong></h4> <div class="language- extra-class"><pre class="language-text"><code>re.findall(pattern, string)
+</code></pre></div><ul><li><strong>功能</strong>：查找字符串中所有匹配的子串。</li> <li><strong>返回值</strong>：返回一个包含所有匹配子串的列表。</li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> re
+
+matches <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">r'\d+'</span><span class="token punctuation">,</span> <span class="token string">'abc123def456'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>matches<span class="token punctuation">)</span>  <span class="token comment"># 输出: ['123', '456']</span>
+</code></pre></div><h4 id="_2-6-re-finditer"><a href="#_2-6-re-finditer" class="header-anchor">#</a> 2- 6 re.finditer</h4> <div class="language-python extra-class"><pre class="language-python"><code> re<span class="token punctuation">.</span>finditer<span class="token punctuation">(</span>pattern<span class="token punctuation">,</span> string<span class="token punctuation">)</span>
+</code></pre></div><ul><li><strong>功能</strong>：查找字符串中所有匹配的子串，返回一个迭代器。</li> <li><strong>返回值</strong>：返回一个迭代器，每次迭代返回一个匹配对象。</li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> re
+
+<span class="token keyword">for</span> <span class="token keyword">match</span> <span class="token keyword">in</span> re<span class="token punctuation">.</span>finditer<span class="token punctuation">(</span><span class="token string">r'\w+'</span><span class="token punctuation">,</span> <span class="token string">'Hello, World!'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token keyword">match</span><span class="token punctuation">.</span>span<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 获取字符串的位置</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token keyword">match</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 输出: Hello 和 World</span>
+</code></pre></div><h4 id="_2-7-re-compile"><a href="#_2-7-re-compile" class="header-anchor">#</a> 2-7 <strong>re.compile()</strong></h4> <div class="language-python extra-class"><pre class="language-python"><code>re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span>pattern<span class="token punctuation">)</span>
+</code></pre></div><ul><li><strong>功能</strong>：编译正则表达式，生成一个正则表达式对象。</li> <li><strong>返回值</strong>：返回一个正则表达式对象，可以用于后续的匹配操作。</li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> re
+s <span class="token operator">=</span><span class="token string">'&lt; I love programming ！&gt; &lt; you love python ! &gt;'</span>
+pattern <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">'&lt; (I.*?)&gt;'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>pattern<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 返回结果：['I love programming ！']</span>
+</code></pre></div><h4 id="_2-8-案例"><a href="#_2-8-案例" class="header-anchor">#</a> 2-8 案例</h4> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># compile+finditer</span>
+<span class="token keyword">import</span> re
+
+s<span class="token operator">=</span><span class="token triple-quoted-string string">&quot;&quot;&quot;
+&lt;div class='ja'&gt;&lt;span id='1'&lt;/span&gt;&lt;/div&gt;
+&lt;div class='js'&gt;&lt;span id='2'&gt;范畴&lt;/span&gt;&lt;/div&gt;
+&lt;div class='jsya'&gt;&lt;span id='3'&gt;阿达&lt;/span&gt;&lt;/div&gt;
+&lt;div class='saa'&gt;&lt;span id='4'&gt;撒旦撒&lt;/span&gt;&lt;/div&gt;
+&quot;&quot;&quot;</span>
+<span class="token comment">#   (?P&lt;分组名字&gt;正侧)</span>
+obj<span class="token operator">=</span>re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r&quot;&lt;div class='.*?'&gt;&lt;span id='\d'&gt;(?P&lt;name&gt;.*?)&lt;/span&gt;&lt;/div&gt;&quot;</span><span class="token punctuation">,</span>re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+
+res<span class="token operator">=</span>obj<span class="token punctuation">.</span>finditer<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> res<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><p><img src="/vuepress/assets/py/02.png" alt="image-20240609155809056"></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 豆瓣top</span>
+
+<span class="token keyword">import</span> requests
+<span class="token keyword">import</span> re
+
+url<span class="token operator">=</span><span class="token string">'https://movie.douban.com/top250'</span>
+
+headers<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/5.0'</span><span class="token punctuation">}</span>
+<span class="token comment"># 发起请求 返回响应    timeout设置超时</span>
+res<span class="token operator">=</span>requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+req<span class="token operator">=</span>res<span class="token punctuation">.</span>text
+<span class="token comment"># 解析数据</span>
+obj<span class="token operator">=</span>re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r'&lt;li&gt;.*? &lt;div class=&quot;info&quot;&gt;.*?&lt;span class=&quot;title&quot;&gt;(?P&lt;name&gt;.*?)&lt;/span&gt;'</span><span class="token punctuation">,</span>re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+<span class="token comment"># 开始匹配</span>
+res<span class="token operator">=</span>obj<span class="token punctuation">.</span>finditer<span class="token punctuation">(</span>req<span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> res<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'电影名：'</span><span class="token punctuation">,</span>i<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><p><img src="/vuepress/assets/py/03.png" alt="image-20240609155934643"></p> <h3 id="_3、beautifulsoup"><a href="#_3、beautifulsoup" class="header-anchor">#</a> 3、BeautifulSoup</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 安装requests库</span>
+
+pip install bs4
+
+<span class="token comment"># 引入模块</span>
+<span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+</code></pre></div><ul><li><h4 id="find只返回第一个匹配到的对象"><a href="#find只返回第一个匹配到的对象" class="header-anchor">#</a> find只返回第一个匹配到的对象</h4></li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 语法结构</span>
+
+<span class="token keyword">import</span> requests
+<span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+<span class="token comment">#  获取数据</span>
+url <span class="token operator">=</span> <span class="token string">'https://b.faloo.com/m_1_index.html'</span>
+<span class="token comment"># 使用代理IP</span>
+headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'http'</span><span class="token punctuation">:</span> <span class="token string">'212.129.251.84:8888'</span><span class="token punctuation">}</span>
+req <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+<span class="token comment"># # 解析</span>
+soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>req<span class="token punctuation">.</span>text<span class="token punctuation">,</span> <span class="token string">'lxml'</span><span class="token punctuation">)</span>
+<span class="token comment"># books = soup.find('li',{'class': 'channel'})</span>
+<span class="token comment"># 使用get_text()返回纯文本内容</span>
+books <span class="token operator">=</span>soup<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span> class_<span class="token operator">=</span><span class="token string">&quot;c_l_detail c_l_detail1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get_text<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>books<span class="token punctuation">)</span>
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+
+html_doc <span class="token operator">=</span> <span class="token triple-quoted-string string">&quot;&quot;&quot;  
+&lt;html&gt;&lt;body&gt;  
+    &lt;p class=&quot;title&quot;&gt;Title&lt;/p&gt;  
+    &lt;p&gt;Paragraph&lt;/p&gt;  
+&lt;/body&gt;&lt;/html&gt;  
+&quot;&quot;&quot;</span>
+
+soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html_doc<span class="token punctuation">,</span> <span class="token string">'html.parser'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 查找第一个 &lt;p&gt; 标签  </span>
+first_p <span class="token operator">=</span> soup<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>first_p<span class="token punctuation">.</span>get_text<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 输出: Title  </span>
+
+<span class="token comment"># 查找具有特定 class 的 &lt;p&gt; 标签  </span>
+title_p <span class="token operator">=</span> soup<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">,</span> class_<span class="token operator">=</span><span class="token string">'title'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>title_p<span class="token punctuation">.</span>get_text<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 输出: Title</span>
+</code></pre></div><ul><li><h4 id="find-all返回所有匹配到的结果"><a href="#find-all返回所有匹配到的结果" class="header-anchor">#</a> find_all返回所有匹配到的结果</h4></li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+
+html_doc <span class="token operator">=</span> <span class="token triple-quoted-string string">&quot;&quot;&quot;  
+&lt;html&gt;&lt;body&gt;  
+    &lt;p class=&quot;title&quot;&gt;Title&lt;/p&gt;  
+    &lt;p&gt;Paragraph 1&lt;/p&gt;  
+    &lt;p&gt;Paragraph 2&lt;/p&gt;  
+&lt;/body&gt;&lt;/html&gt;  
+&quot;&quot;&quot;</span>
+
+soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html_doc<span class="token punctuation">,</span> <span class="token string">'html.parser'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 查找所有 &lt;p&gt; 标签  </span>
+all_p <span class="token operator">=</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> p <span class="token keyword">in</span> all_p<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>get_text<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 输出: Title, Paragraph 1, Paragraph 2  </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'****************************************'</span><span class="token punctuation">)</span>
+<span class="token comment"># 查找前两个 &lt;p&gt; 标签  </span>
+first_two_p <span class="token operator">=</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">,</span> limit<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> p <span class="token keyword">in</span> first_two_p<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>get_text<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 输出: Title, Paragraph 1</span>
+</code></pre></div><ul><li><h4 id="find-find-all"><a href="#find-find-all" class="header-anchor">#</a> find+find_all</h4></li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> requests
+<span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+
+url <span class="token operator">=</span> <span class="token string">'https://movie.douban.com/top250'</span>
+headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/5.0'</span><span class="token punctuation">}</span>
+
+req<span class="token operator">=</span>requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+res<span class="token operator">=</span>req<span class="token punctuation">.</span>text
+<span class="token comment"># print(res)</span>
+soup<span class="token operator">=</span>BeautifulSoup<span class="token punctuation">(</span>res<span class="token punctuation">,</span><span class="token string">'lxml'</span><span class="token punctuation">)</span>
+books<span class="token operator">=</span>soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span>class_<span class="token operator">=</span><span class="token string">'info'</span><span class="token punctuation">)</span>
+<span class="token comment"># print(books)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> books<span class="token punctuation">:</span>
+    title<span class="token operator">=</span>i<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'span'</span><span class="token punctuation">,</span>class_<span class="token operator">=</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text
+    direct<span class="token operator">=</span>i<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">,</span>class_<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text
+    direct<span class="token operator">=</span>direct<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'   '</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'电影名：'</span><span class="token punctuation">,</span>title<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>direct<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><p><img src="/vuepress/assets/py/04.png" alt="image-20240609183208629"></p> <h3 id="_4、lxml和xpath"><a href="#_4、lxml和xpath" class="header-anchor">#</a> 4、<code>lxml和XPath</code></h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 安装lxml库</span>
+
+pip <span class="token operator">-</span>m install lxml
+
+<span class="token comment"># 引入模块</span>
+<span class="token keyword">from</span> lxml <span class="token keyword">import</span> etree
+</code></pre></div><ul><li><h4 id="xpath语法节点选择"><a href="#xpath语法节点选择" class="header-anchor">#</a> Xpath语法节点选择</h4></li></ul> <table><thead><tr><th>表达式</th> <th>描述</th></tr></thead> <tbody><tr><td>Nodename</td> <td>选取此节点的所有子节点</td></tr> <tr><td>/</td> <td>从根节点选取</td></tr> <tr><td>//</td> <td>从匹配选择的当前节点选择文档中的节点，而不考虑它们的位置</td></tr> <tr><td>.</td> <td>选取当前节点</td></tr> <tr><td>..</td> <td>选取当前节点的父节点</td></tr> <tr><td>@</td> <td>选取属性</td></tr></tbody></table> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 属性定位</span>
+<span class="token operator">//</span>div<span class="token punctuation">[</span>@<span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;myclass&quot;</span><span class="token punctuation">]</span>
+
+<span class="token comment">#索引定位</span>
+<span class="token operator">//</span>div<span class="token punctuation">[</span>@<span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;myclass&quot;</span><span class="token punctuation">]</span><span class="token operator">/</span>ul<span class="token operator">/</span>li<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
+
+<span class="token comment">#取文本</span>
+<span class="token operator">//</span>div<span class="token punctuation">[</span>@<span class="token keyword">class</span><span class="token operator">=</span><span class="token string">'myclass'</span><span class="token punctuation">]</span><span class="token operator">/</span>text<span class="token punctuation">(</span><span class="token punctuation">)</span>		<span class="token comment"># 获取标签中直系的文本内容</span>
+
+<span class="token comment">#取属性</span>
+<span class="token operator">//</span>a<span class="token operator">/</span>@href
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> lxml <span class="token keyword">import</span> etree
+
+html1 <span class="token operator">=</span> <span class="token triple-quoted-string string">'''  
+&lt;html&gt;  
+    &lt;body&gt;  
+        &lt;li class=&quot;tag-1&quot;&gt;需要的内容1&lt;/li&gt;  
+        &lt;li class=&quot;tag-2&quot;&gt;需要的内容2&lt;/li&gt;  
+        &lt;li class=&quot;tag-3&quot;&gt;需要的内容3&lt;/li&gt;  
+    &lt;/body&gt;  
+&lt;/html&gt;  
+'''</span>
+selector <span class="token operator">=</span> etree<span class="token punctuation">.</span>HTML<span class="token punctuation">(</span>html1<span class="token punctuation">)</span>
+contents <span class="token operator">=</span> selector<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//li[starts-with(@class, &quot;tag&quot;)]/text()'</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> content <span class="token keyword">in</span> contents<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+</code></pre></div><p><img src="/vuepress/assets/py/05.png" alt="image-20240611233055477"></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/vuepress/guide/python爬虫/02python爬虫数据存储.html">
+        python爬虫数据存储
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/vuepress/assets/js/app.63c31dc8.js" defer></script><script src="/vuepress/assets/js/7.b0879730.js" defer></script><script src="/vuepress/assets/js/1.e3575c5c.js" defer></script><script src="/vuepress/assets/js/29.b77d5d7b.js" defer></script>
+  </body>
+</html>
